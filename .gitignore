@@ -162,4 +162,4 @@ cython_debug/
 # Gem5
 gem5/
 m5out/
-mlbench/models/
+mlbench/models/inception*
