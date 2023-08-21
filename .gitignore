@@ -162,4 +162,5 @@ cython_debug/
 # Gem5
 gem5/
 m5out/
-mlbench/models/inception*
+mlbench/models/inception*/
+mlbench/models/mobilenet_v1_1.0_224/
