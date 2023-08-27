@@ -6,7 +6,8 @@ CMD := mlbench/linux_$(ARCH)_benchmark_model
 MODEL := squeezenet
 MODEL_TFLITE := mlbench/models/$(MODEL)/$(MODEL).tflite
 
-CACHE := --caches --l1d_size=32kB --l1i_size=32kB --l1d_assoc=8 --l1i_assoc=8 --l2cache --l2_size=256kB --l2_assoc=8
+CACHE := 
+#--caches --l1d_size=32kB --l1i_size=32kB --l1d_assoc=8 --l1i_assoc=8 --l2cache --l2_size=256kB --l2_assoc=8
 MEMORY := --mem-type=RRAM
 
 se:
