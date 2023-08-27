@@ -11,6 +11,7 @@ CACHE :=
 MEMORY := --mem-type=RRAM
 
 se:
+	cp -f NVMInterface.py $(GEM5_DIR)/src/mem/
 	$(GEM5) $(SCRIPT) $(CACHE) $(MEMORY) --cmd=$(CMD) --options="--warmup_min_secs=0 --num_runs=1 --min_secs=0 --graph=$(MODEL_TFLITE)"
 
 run:

@@ -64,8 +64,6 @@ from common.FileSystemConfig import config_filesystem
 from common.Caches import *
 from common.cpu2000 import *
 
-from nvm import *
-
 
 def get_processes(args):
   """Interprets provided args and returns a list of processes"""
