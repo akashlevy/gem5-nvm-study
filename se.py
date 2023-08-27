@@ -46,21 +46,23 @@ import os
 
 from m5.defines import buildEnv
 from m5.objects import *
-from m5.util import fatal
+from m5.util import addToPath, fatal
 from gem5.isas import ISA
 from gem5.runtime import get_runtime_isa
 
-from gem5.configs.ruby import Ruby
+addToPath("gem5/configs")
 
-from configs.common import Options
-from configs.common import Simulation
-from configs.common import CacheConfig
-from configs.common import CpuConfig
-from configs.common import ObjectList
-from configs.common import MemConfig
-from configs.common.FileSystemConfig import config_filesystem
-from configs.common.Caches import *
-from configs.common.cpu2000 import *
+from ruby import Ruby
+
+from common import Options
+from common import Simulation
+from common import CacheConfig
+from common import CpuConfig
+from common import ObjectList
+from common import MemConfig
+from common.FileSystemConfig import config_filesystem
+from common.Caches import *
+from common.cpu2000 import *
 
 from nvm import *
 
