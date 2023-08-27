@@ -50,7 +50,7 @@ from m5.util import fatal
 from gem5.isas import ISA
 from gem5.runtime import get_runtime_isa
 
-from ruby import Ruby
+from gem5.configs.ruby import Ruby
 
 from configs.common import Options
 from configs.common import Simulation
