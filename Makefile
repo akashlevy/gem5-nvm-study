@@ -11,11 +11,11 @@ nvm:
 	cp -f NVMInterface.py $(GEM5_DIR)/src/mem/
 	cd $(GEM5_DIR) && scons build/X86/gem5.opt && cd -
 
-se: nvm
+se:
 	$(GEM5) $(SCRIPT) --mem-type=$(MEMORY) --cmd=$(CMD) --options="--warmup_min_secs=0 --num_runs=1 --min_secs=0 --graph=$(MODEL_TFLITE)"
 
 run:
 	$(CMD) --graph=$(MODEL_TFLITE)
 
-expt: nvm
+expt:
 	python3 gem5expt.py
