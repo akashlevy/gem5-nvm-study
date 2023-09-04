@@ -5,14 +5,15 @@ SCRIPT := $(GEM5_DIR)/configs/deprecated/example/se.py
 CMD := mlbench/linux_$(ARCH)_benchmark_model
 MODEL := squeezenet
 MODEL_TFLITE := mlbench/models/$(MODEL)/$(MODEL).tflite
-MEMORY :=
+CPU_TYPE := X86TimingSimpleCPU
+MEM_TYPE := DDR3_1600_8x8
 
 nvm:
 	cp -f NVMInterface.py $(GEM5_DIR)/src/mem/
 	cd $(GEM5_DIR) && scons build/X86/gem5.opt && cd -
 
 se:
-	$(GEM5) $(SCRIPT) --mem-type=$(MEMORY) --cmd=$(CMD) --options="--warmup_min_secs=0 --num_runs=1 --min_secs=0 --graph=$(MODEL_TFLITE)"
+	$(GEM5) $(SCRIPT) --mem-type=$(MEM_TYPE) --cpu-type=$(CPU_TYPE) --cmd=$(CMD) --options="--warmup_min_secs=0 --num_runs=1 --min_secs=0 --graph=$(MODEL_TFLITE)"
 
 run:
 	$(CMD) --graph=$(MODEL_TFLITE)
