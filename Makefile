@@ -5,7 +5,7 @@ SCRIPT := $(GEM5_DIR)/configs/deprecated/example/se.py
 CMD := mlbench/linux_$(ARCH)_benchmark_model
 MODEL := squeezenet
 MODEL_TFLITE := mlbench/models/$(MODEL)/$(MODEL).tflite
-MEMORY := RRAM
+MEMORY := NVM_2400_1x64
 
 se:
 	cp -f NVMInterface.py $(GEM5_DIR)/src/mem/
@@ -14,3 +14,6 @@ se:
 
 run:
 	$(CMD) --graph=$(MODEL_TFLITE)
+
+expt:
+	python gem5expt.py

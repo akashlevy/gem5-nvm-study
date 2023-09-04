@@ -130,7 +130,7 @@ class NVM_DIMM(NVMInterface):
     device_bus_width = 64 # 64-bit data bus
     devices_per_rank = 1 # always 1 device
     ranks_per_channel = 1 # always 1 device
-    banks_per_rank = 4 # UPDATE: number of banks
+    banks_per_rank = 4 # number of banks
 
     burst_length = 8 # default
 
@@ -149,88 +149,4 @@ class NVM_DIMM(NVMInterface):
     tWTR = "1.666ns" # 2 cycles
     tRTW = "1.666ns" # 2 cycles
     tCS = "1.666ns" # 2 cycles
-
-
-# PCRAM Area-Optimized
-class PCRAM_Area_Opt(NVM_DIMM):
-    banks_per_rank = 1
-    tREAD = "66.918ns"
-    tWRITE = "105.704ns"
-
-
-# STTRAM ReadEDP-Optimized
-class STTRAM_ReadEDP_Opt(NVM_DIMM):
-    banks_per_rank = 32
-    tREAD = "2.884ns"
-    tWRITE = "10.922ns"
-
-
-# STTRAM ReadDynamicEnergy-Optimized
-class STTRAM_ReadDynamicEnergy_Opt(NVM_DIMM):
-    banks_per_rank = 8
-    tREAD = "79.992ns"
-    tWRITE = "88.485ns"
-
-
-# RRAM ReadDynamicEnergy-Optimized
-class RRAM_ReadDynamicEnergy_Opt(NVM_DIMM):
-    banks_per_rank = 8
-    tREAD = "4.672ns"
-    tWRITE = "23.73ns"
-
-
-# STTRAM Area-Optimized
-class STTRAM_Area_Opt(NVM_DIMM):
-    banks_per_rank = 1
-    tREAD = "314.36ns"
-    tWRITE = "322.387ns"
-
-
-# RRAM ReadEDP-Optimized
-class RRAM_ReadEDP_Opt(NVM_DIMM):
-    banks_per_rank = 64
-    tREAD = "2.159ns"
-    tWRITE = "20.67ns"
-
-
-# STTRAM ReadLatency-Optimized
-class STTRAM_ReadLatency_Opt(NVM_DIMM):
-    banks_per_rank = 512
-    tREAD = "2.659ns"
-    tWRITE = "10.686ns"
-
-
-# PCRAM ReadDynamicEnergy-Optimized
-class PCRAM_ReadDynamicEnergy_Opt(NVM_DIMM):
-    banks_per_rank = 64
-    tREAD = "4.542ns"
-    tWRITE = "44.335ns"
-
-
-# RRAM Area-Optimized
-class RRAM_Area_Opt(NVM_DIMM):
-    banks_per_rank = 4
-    tREAD = "11.586ns"
-    tWRITE = "30.432ns"
-
-
-# PCRAM ReadEDP-Optimized
-class PCRAM_ReadEDP_Opt(NVM_DIMM):
-    banks_per_rank = 128
-    tREAD = "0.48671ns"
-    tWRITE = "40.304ns"
-
-
-# RRAM ReadLatency-Optimized
-class RRAM_ReadLatency_Opt(NVM_DIMM):
-    banks_per_rank = 256
-    tREAD = "1.948ns"
-    tWRITE = "20.428ns"
-
-
-# PCRAM ReadLatency-Optimized
-class PCRAM_ReadLatency_Opt(NVM_DIMM):
-    banks_per_rank = 512
-    tREAD = "0.46508800000000006ns"
-    tWRITE = "40.264ns"
 

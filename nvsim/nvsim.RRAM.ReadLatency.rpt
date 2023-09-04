@@ -1,0 +1,102 @@
+User-defined configuration file (./nvsim.RRAM.ReadLatency.cfg) is loaded
+
+Memory Cell: RRAM (Memristor)
+Cell Area (F^2)    : 4.000 (2.000Fx2.000F)
+Cell Aspect Ratio  : 1.000
+Cell Turned-On Resistance : 1.000Mohm
+Cell Turned-Off Resistance: 10.000Mohm
+Read Mode: Current-Sensing
+  - Read Voltage: 0.400V
+Reset Mode: Voltage
+  - Reset Voltage: 2.000V
+  - Reset Pulse: 10.000ns
+Set Mode: Voltage
+  - Set Voltage: 2.000V
+  - Set Pulse: 10.000ns
+Access Type: None Access Device
+
+====================
+DESIGN SPECIFICATION
+====================
+Design Target: Random Access Memory
+Capacity   : 8MB
+Data Width : 64Bits (8Bytes)
+
+Searching for the best solution that is optimized for read latency ...
+
+=============
+CONFIGURATION
+=============
+Bank Organization: 64 x 4
+ - Row Activation   : 8 / 64
+ - Column Activation: 1 / 4
+Mat Organization: 1 x 2
+ - Row Activation   : 1 / 1
+ - Column Activation: 2 / 2
+ - Subarray Size    : 256 Rows x 512 Columns
+Mux Level:
+ - Senseamp Mux      : 128
+ - Output Level-1 Mux: 1
+ - Output Level-2 Mux: 1
+Local Wire:
+ - Wire Type : Local Aggressive
+ - Repeater Type: No Repeaters
+ - Low Swing : No
+Global Wire:
+ - Wire Type : Global Aggressive
+ - Repeater Type: No Repeaters
+ - Low Swing : No
+Buffer Design Style: Latency-Optimized
+=============
+   RESULT
+=============
+Area:
+ - Total Area = 1.078mm x 506.713um = 546025.131um^2
+ |--- Mat Area      = 16.837um x 126.678um = 2132.911um^2   (23.794%)
+ |--- Subarray Area = 16.837um x 59.796um = 1006.799um^2   (25.204%)
+ - Area Efficiency = 23.794%
+Timing:
+ -  Read Latency = 1.948ns
+ |--- H-Tree Latency = 203.852ps
+ |--- Mat Latency    = 1.744ns
+    |--- Predecoder Latency = 59.958ps
+    |--- Subarray Latency   = 1.684ns
+       |--- Row Decoder Latency = 98.014ps
+       |--- Bitline Latency     = 7.523ps
+       |--- Senseamp Latency    = 1.453ns
+       |--- Mux Latency         = 71.335ps
+       |--- Precharge Latency   = 211.035ps
+ - Write Latency = 20.428ns
+ |--- H-Tree Latency = 101.926ps
+ |--- Mat Latency    = 20.326ns
+    |--- Predecoder Latency = 59.958ps
+    |--- Subarray Latency   = 20.266ns
+       |--- Row Decoder Latency = 98.014ps
+       |--- Charge Latency      = 56.759ps
+ - Read Bandwidth  = 4.452GB/s
+ - Write Bandwidth = 394.748MB/s
+Power:
+ -  Read Dynamic Energy = 49.353pJ
+ |--- H-Tree Dynamic Energy = 28.982pJ
+ |--- Mat Dynamic Energy    = 2.546pJ per mat
+    |--- Predecoder Dynamic Energy = 0.048pJ
+    |--- Subarray Dynamic Energy   = 1.249pJ per active subarray
+       |--- Row Decoder Dynamic Energy = 0.058pJ
+       |--- Mux Decoder Dynamic Energy = 0.353pJ
+       |--- Bitline & Cell Read Energy = 0.002pJ
+       |--- Senseamp Dynamic Energy    = 0.602pJ
+       |--- Mux Dynamic Energy         = 0.035pJ
+       |--- Precharge Dynamic Energy   = 0.200pJ
+ - Write Dynamic Energy = 82.870pJ
+ |--- H-Tree Dynamic Energy = 28.982pJ
+ |--- Mat Dynamic Energy    = 6.736pJ per mat
+    |--- Predecoder Dynamic Energy = 0.048pJ
+    |--- Subarray Dynamic Energy   = 3.344pJ per active subarray
+       |--- Row Decoder Dynamic Energy = 0.058pJ
+       |--- Mux Decoder Dynamic Energy = 0.353pJ
+       |--- Mux Dynamic Energy         = 0.035pJ
+ - Leakage Power = 869.563mW
+ |--- H-Tree Leakage Power = 0.000pW
+ |--- Mat Leakage Power    = 3.397mW per mat
+
+Finished!

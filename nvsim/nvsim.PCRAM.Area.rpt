@@ -1,0 +1,121 @@
+User-defined configuration file (./nvsim.PCRAM.Area.cfg) is loaded
+
+Memory Cell: PCRAM (Phase-Change)
+Cell Area (F^2)    : 9.000 (3.000Fx3.000F)
+Cell Aspect Ratio  : 1.000
+Cell Turned-On Resistance : 1.000Kohm
+Cell Turned-Off Resistance: 1.000Mohm
+Read Mode: Voltage-Sensing
+  - Read Current: 40.000uA
+Reset Mode: Current
+  - Reset Current: 300.000uA
+  - Reset Pulse: 40.000ns
+Set Mode: Current
+  - Set Current: 150.000uA
+  - Set Pulse: 150.000ns
+Access Type: CMOS
+
+====================
+DESIGN SPECIFICATION
+====================
+Design Target: Random Access Memory
+Capacity   : 8MB
+Data Width : 64Bits (8Bytes)
+
+Searching for the best solution that is optimized for area ...
+
+=============
+CONFIGURATION
+=============
+Bank Organization: 1 x 1
+ - Row Activation   : 1 / 1
+ - Column Activation: 1 / 1
+Mat Organization: 2 x 1
+ - Row Activation   : 1 / 2
+ - Column Activation: 1 / 1
+ - Subarray Size    : 2048 Rows x 16384 Columns
+Mux Level:
+ - Senseamp Mux      : 256
+ - Output Level-1 Mux: 1
+ - Output Level-2 Mux: 1
+Local Wire:
+ - Wire Type : Local Aggressive
+ - Repeater Type: No Repeaters
+ - Low Swing : No
+Global Wire:
+ - Wire Type : Global Aggressive
+ - Repeater Type: No Repeaters
+ - Low Swing : No
+Buffer Design Style: Latency-Optimized
+=============
+   RESULT
+=============
+Area:
+ - Total Area = 274.064um x 1.128mm = 309007.037um^2
+ |--- Mat Area      = 274.064um x 1.128mm = 309007.037um^2   (94.602%)
+ |--- Subarray Area = 137.032um x 1.113mm = 152555.809um^2   (95.810%)
+ - Area Efficiency = 94.602%
+Timing:
+ -  Read Latency = 66.918ns
+ |--- H-Tree Latency = 0.000ps
+ |--- Mat Latency    = 66.918ns
+    |--- Predecoder Latency = 109.453ps
+    |--- Subarray Latency   = 66.808ns
+       |--- Row Decoder Latency = 24.892ns
+       |--- Bitline Latency     = 1.384ns
+       |--- Senseamp Latency    = 2.656ps
+       |--- Mux Latency         = 69.768ps
+       |--- Precharge Latency   = 757.339ps
+ - RESET Latency = 105.704ns
+ |--- H-Tree Latency = 0.000ps
+ |--- Mat Latency    = 105.704ns
+    |--- Predecoder Latency = 109.453ps
+    |--- Subarray Latency   = 105.595ns
+       |--- RESET Pulse Duration = 40.000ns
+       |--- Row Decoder Latency  = 24.892ns
+       |--- Charge Latency   = 243.247ps
+ - SET Latency   = 215.704ns
+ |--- H-Tree Latency = 0.000ps
+ |--- Mat Latency    = 215.704ns
+    |--- Predecoder Latency = 109.453ps
+    |--- Subarray Latency   = 215.595ns
+       |--- SET Pulse Duration   = 150.000ns
+       |--- Row Decoder Latency  = 24.892ns
+       |--- Charger Latency      = 243.247ps
+ - Read Bandwidth  = 187.471MB/s
+ - Write Bandwidth = 37.107MB/s
+Power:
+ -  Read Dynamic Energy = 521.957pJ
+ |--- H-Tree Dynamic Energy = 0.000pJ
+ |--- Mat Dynamic Energy    = 521.957pJ per mat
+    |--- Predecoder Dynamic Energy = 0.342pJ
+    |--- Subarray Dynamic Energy   = 521.615pJ per active subarray
+       |--- Row Decoder Dynamic Energy = 0.808pJ
+       |--- Mux Decoder Dynamic Energy = 6.306pJ
+       |--- Bitline & Cell Read Energy = 0.012pJ
+       |--- Senseamp Dynamic Energy    = 0.027pJ
+       |--- Mux Dynamic Energy         = 4.612pJ
+       |--- Precharge Dynamic Energy   = 6.142pJ
+ - RESET Dynamic Energy = 6.521nJ
+ |--- H-Tree Dynamic Energy = 0.000pJ
+ |--- Mat Dynamic Energy    = 6.521nJ per mat
+    |--- Predecoder Dynamic Energy = 0.342pJ
+    |--- Subarray Dynamic Energy   = 6.511nJ per active subarray
+       |--- Row Decoder Dynamic Energy = 0.808pJ
+       |--- Mux Decoder Dynamic Energy = 6.306pJ
+       |--- Mux Dynamic Energy         = 4.612pJ
+       |--- Cell RESET Dynamic Energy  = 3.475nJ
+ - SET Dynamic Energy = 6.510nJ
+ |--- H-Tree Dynamic Energy = 0.000pJ
+ |--- Mat Dynamic Energy    = 6.510nJ per mat
+    |--- Predecoder Dynamic Energy = 0.342pJ
+    |--- Subarray Dynamic Energy   = 6.511nJ per active subarray
+       |--- Row Decoder Dynamic Energy = 0.808pJ
+       |--- Mux Decoder Dynamic Energy = 6.306pJ
+       |--- Mux Dynamic Energy         = 4.612pJ
+       |--- Cell SET Dynamic Energy    = 6.499nJ
+ - Leakage Power = 27.884mW
+ |--- H-Tree Leakage Power = 0.000pW
+ |--- Mat Leakage Power    = 27.884mW per mat
+
+Finished!
