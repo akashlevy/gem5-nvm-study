@@ -16,4 +16,4 @@ run:
 	$(CMD) --graph=$(MODEL_TFLITE)
 
 expt:
-	python gem5expt.py
+	python3 gem5expt.py
