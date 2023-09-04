@@ -7,9 +7,11 @@ MODEL := squeezenet
 MODEL_TFLITE := mlbench/models/$(MODEL)/$(MODEL).tflite
 MEMORY := NVM_2400_1x64
 
-se:
+NVMInterface.py:
 	cp -f NVMInterface.py $(GEM5_DIR)/src/mem/
 	cd $(GEM5_DIR) && scons build/X86/gem5.opt && cd -
+
+se:
 	$(GEM5) $(SCRIPT) $(CACHE) --mem-type=$(MEMORY) --cmd=$(CMD) --options="--warmup_min_secs=0 --num_runs=1 --min_secs=0 --graph=$(MODEL_TFLITE)"
 
 run:
