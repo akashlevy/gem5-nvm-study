@@ -130,7 +130,7 @@ class NVM_DIMM(NVMInterface):
     device_bus_width = 64 # 64-bit data bus
     devices_per_rank = 1 # always 1 device
     ranks_per_channel = 1 # always 1 device
-    banks_per_rank = 4 # UPDATE: number of banks
+    banks_per_rank = 4 # number of banks
 
     burst_length = 8 # default
 

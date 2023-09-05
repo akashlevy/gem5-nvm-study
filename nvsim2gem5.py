@@ -58,9 +58,9 @@ for rptname in glob('nvsim/*.rpt'):
 
 # Export data to CSV
 with open('nvsim/nvsim.csv', 'w') as f:
-  f.write('mem,opt,banks,tREAD,tWRITE,eREAD,eWRITE,pLEAK\n')
+  f.write('mem,opt,banks,tREAD,tWRITE,eREAD,eWRITE,pLEAK,area\n')
   for row in data:
-    f.write('{},{},{},{},{},{},{},{}\n'.format(
+    f.write('{},{},{},{},{},{},{},{},{}\n'.format(
       row['mem'],
       row['opt'],
       row['banks'],
@@ -68,7 +68,8 @@ with open('nvsim/nvsim.csv', 'w') as f:
       row['tWRITE'],
       row['eREAD'],
       row['eWRITE'],
-      row['pLEAK']
+      row['pLEAK'],
+      row['area']
     ))
 
 
